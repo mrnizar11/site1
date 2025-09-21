@@ -251,16 +251,12 @@
             emailjs.send('service_rusentry1', 'template_if733rb', {
                 to_email: 'mohamedmesselka31@gmail.com',
                 from_name: 'RusEntry Form Submission',
-                message: `
-                    New Student Registration:
-                    Name: ${formData.fullName}
-                    Date of Birth: ${formData.birthDate}
-                    Specialty: ${formData.specialty}
-                    Email: ${formData.email}
-                    Phone: ${formData.phone}
-                    Nationality: ${formData.nationality}
-                    Submitted: ${formData.timestamp}
-                `,
+                fullName: formData.fullName,
+                birthDate: formData.birthDate,
+                specialty: formData.specialty,
+                email: formData.email,
+                phone: formData.phone,
+                nationality: formData.nationality,
                 reply_to: formData.email
             })
             .then(function() {
