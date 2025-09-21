@@ -120,8 +120,8 @@
                                 <input type="text" id="nationality" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Russian" required>
                             </div>
                             
-                            <button type="submit" class="w-full bg-blue-900 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-800 transition duration-300 flex items-center justify-center">
-                                <i data-feather="user-plus" class="mr-2"></i>
+                            <button type="submit" class="w-full bg-blue-900 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-800 transition duration-300 flex items-center justify-center hovered-element">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus mr-2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
                                 Register Student
                             </button>
                         </form>
@@ -223,7 +223,9 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
     <script>
         AOS.init({
             duration: 800,
@@ -234,8 +236,10 @@
         feather.replace();
         
         // Initialize EmailJS
-        (function() {
-            emailjs.init('YOUR_EMAILJS_USER_ID'); // You need to sign up at EmailJS.com and get your own ID
+        (function(){
+            emailjs.init({
+                publicKey: "gltQTReW5SPea09Ml",
+            });
         })();
 
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
@@ -252,7 +256,7 @@
             };
 
             // Send email using EmailJS
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+            emailjs.send('service_rusentry1', 'template_rusentry1', {
                 to_email: 'mohamedmesselka31@gmail.com',
                 from_email: 'medasmo31@gmail.com',
                 from_name: 'RusEntry Registration',
