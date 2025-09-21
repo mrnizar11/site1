@@ -249,26 +249,20 @@
             };
 
             emailjs.send('service_rusentry1', 'template_rusentry1', {
-                from_name: "RusEntry Registration",
-                to_email: "mohamedmesselka31@gmail.com",
-                message: `
-                    New Student Registration:
-                    Name: ${formData.fullName}
-                    Date of Birth: ${formData.birthDate}
-                    Specialty: ${formData.specialty}
-                    Email: ${formData.email}
-                    Phone: ${formData.phone}
-                    Nationality: ${formData.nationality}
-                    Submitted: ${formData.timestamp}
-                `,
-                reply_to: formData.email
+                fullName: formData.fullName,
+                birthDate: formData.birthDate,
+                specialty: formData.specialty,
+                email: formData.email,
+                phone: formData.phone,
+                nationality: formData.nationality,
+                timestamp: formData.timestamp
             })
             .then(function() {
                 document.getElementById('registrationForm').reset();
-                alert('Registration submitted successfully! We will contact you shortly.');
+                alert('Thank you for your registration! We have received your information and will contact you shortly.');
             }, function(error) {
                 console.error('Email failed:', error);
-                alert('There was an error submitting your form. Please try again.');
+                alert('There was an error submitting your form. Please check your internet connection and try again. If the problem persists, you can contact us directly at korssoul.work@gmail.com');
             });
         });
     </script>
