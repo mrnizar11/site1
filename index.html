@@ -238,25 +238,37 @@
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Collect form data
             const formData = {
                 fullName: document.getElementById('fullName').value,
                 birthDate: document.getElementById('birthDate').value,
                 specialty: document.getElementById('specialty').value,
                 email: document.getElementById('email').value,
                 phone: document.getElementById('phone').value,
-                nationality: document.getElementById('nationality').value
+                nationality: document.getElementById('nationality').value,
+                timestamp: new Date().toISOString()
             };
 
-            // Send data to EmailJS (variables must match template vars)
-            emailjs.send('service_rusentry1', 'template_rusentry1', formData)
-            .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
+            emailjs.send('service_rusentry1', 'template_rusentry1', {
+                from_name: "RusEntry Registration",
+                to_email: "mohamedmesselka31@gmail.com",
+                message: `
+                    New Student Registration:
+                    Name: ${formData.fullName}
+                    Date of Birth: ${formData.birthDate}
+                    Specialty: ${formData.specialty}
+                    Email: ${formData.email}
+                    Phone: ${formData.phone}
+                    Nationality: ${formData.nationality}
+                    Submitted: ${formData.timestamp}
+                `,
+                reply_to: formData.email
+            })
+            .then(function() {
                 document.getElementById('registrationForm').reset();
-                alert('✅ Thank you for registering with RusEntry! Our specialists will contact you shortly.');
+                alert('Registration submitted successfully! We will contact you shortly.');
             }, function(error) {
-                console.error('FAILED...', error);
-                alert('❌ There was an error submitting your form. Please try again later.');
+                console.error('Email failed:', error);
+                alert('There was an error submitting your form. Please try again.');
             });
         });
     </script>
