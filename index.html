@@ -31,9 +31,9 @@
                     <span class="text-xl font-bold">RusEntry</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="hover:text-blue-200">Home</a>
-                    <a href="#" class="hover:text-blue-200">About</a>
-                    <a href="#contact-section" class="hover:text-blue-200">Contact</a>
+                    <a href="index.html" class="hover:text-blue-200">Home</a>
+                    <a href="index.html#registrationForm" class="hover:text-blue-200">Registration</a>
+                    <a href="#contact-info" class="hover:text-blue-200">Contact</a>
                 </div>
                 <button class="md:hidden focus:outline-none">
                     <i data-feather="menu" class="w-6 h-6"></i>
@@ -140,68 +140,26 @@
         </div>
     </div>
 
-    <!-- Features -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Why Register With Us?</h2>
-            
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-blue-900 mb-4">
-                        <i data-feather="shield" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Secure Data</h3>
-                    <p class="text-gray-600">All student information is protected with advanced encryption and security measures.</p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-blue-900 mb-4">
-                        <i data-feather="globe" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Russia-Wide Coverage</h3>
-                    <p class="text-gray-600">We work with educational institutions across all regions of the Russian Federation.</p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-blue-900 mb-4">
-                        <i data-feather="award" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Verified Institutions</h3>
-                    <p class="text-gray-600">Only officially recognized Russian universities and colleges are included in our system.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="gradient-bg text-white py-12">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8">
-                <div id="contact-section">
+                <div id="contact-info">
                     <h3 class="text-xl font-bold mb-4">Russian Student Registry</h3>
                     <p class="mb-4">Connecting international students with Russian educational opportunities.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="hover:text-blue-200"><i data-feather="facebook"></i></a>
-                        <a href="https://instagram.com/rusentry" class="hover:text-blue-200"><i data-feather="instagram"></i></a>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://instagram.com/rusentry" target="_blank" class="hover:text-blue-200">
+                            <i data-feather="instagram" class="w-6 h-6"></i>
+                        </a>
                     </div>
                 </div>
                 
                 <div>
                     <h4 class="font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-blue-200">Home</a></li>
-                        <li><a href="#registrationForm" class="hover:text-blue-200">Registration</a></li>
+                        <li><a href="index.html" class="hover:text-blue-200">Home</a></li>
+                        <li><a href="index.html#registrationForm" class="hover:text-blue-200">Registration</a></li>
                         <li><a href="universities.html" class="hover:text-blue-200">Universities</a></li>
-                        <li><a href="#" class="hover:text-blue-200">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Legal</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-blue-200">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-blue-200">Terms of Service</a></li>
-                        <li><a href="#" class="hover:text-blue-200">Data Protection</a></li>
                     </ul>
                 </div>
                 
@@ -238,14 +196,14 @@
         // Initialize EmailJS
         (function(){
             emailjs.init({
-                publicKey: "gltQTReW5SPea09Ml",
+                publicKey: "gltQTReW5SPea09Ml", // use your EmailJS public key
             });
         })();
 
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
+            // Collect form data
             const formData = {
                 fullName: document.getElementById('fullName').value,
                 birthDate: document.getElementById('birthDate').value,
@@ -255,31 +213,15 @@
                 nationality: document.getElementById('nationality').value
             };
 
-            // Send email using EmailJS
-            emailjs.send('service_rusentry1', 'template_rusentry1', {
-                to_email: 'mohamedmesselka31@gmail.com',
-                from_email: 'medasmo31@gmail.com',
-                from_name: 'RusEntry Registration',
-                subject: 'New Student Registration',
-                message: `New Student Registration Details:
-                
-Full Name: ${formData.fullName}
-Date of Birth: ${formData.birthDate}
-Specialty: ${formData.specialty}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Nationality: ${formData.nationality}`,
-                reply_to: formData.email
-            })
+            // Send data to EmailJS (variables must match template vars)
+            emailjs.send('service_rusentry1', 'template_rusentry1', formData)
             .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);
-                // Clear form
                 document.getElementById('registrationForm').reset();
-                // Show confirmation
-                alert('Thank you for registering with RusEntry! Our specialists will contact you shortly.');
+                alert('✅ Thank you for registering with RusEntry! Our specialists will contact you shortly.');
             }, function(error) {
-                console.log('FAILED...', error);
-                alert('There was an error submitting your form. Please try again later.');
+                console.error('FAILED...', error);
+                alert('❌ There was an error submitting your form. Please try again later.');
             });
         });
     </script>
