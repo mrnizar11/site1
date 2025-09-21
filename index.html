@@ -245,23 +245,29 @@
                 email: document.getElementById('email').value,
                 phone: document.getElementById('phone').value,
                 nationality: document.getElementById('nationality').value,
-                timestamp: new Date().toISOString()
+                timestamp: new Date().toLocaleString()
             };
 
-            emailjs.send('service_rusentry1', 'template_rusentry1', {
-                fullName: formData.fullName,
-                birthDate: formData.birthDate,
-                specialty: formData.specialty,
-                email: formData.email,
-                phone: formData.phone,
-                nationality: formData.nationality,
-                timestamp: formData.timestamp
+            emailjs.send('service_rusentry1', 'template_if733rb', {
+                to_email: 'mohamedmesselka31@gmail.com',
+                from_name: 'RusEntry Form Submission',
+                message: `
+                    New Student Registration:
+                    Name: ${formData.fullName}
+                    Date of Birth: ${formData.birthDate}
+                    Specialty: ${formData.specialty}
+                    Email: ${formData.email}
+                    Phone: ${formData.phone}
+                    Nationality: ${formData.nationality}
+                    Submitted: ${formData.timestamp}
+                `,
+                reply_to: formData.email
             })
             .then(function() {
                 document.getElementById('registrationForm').reset();
                 alert('Thank you for your registration! We have received your information and will contact you shortly.');
             }, function(error) {
-                console.error('Email failed:', error);
+                console.error('EmailJS Error:', error);
                 alert('There was an error submitting your form. Please check your internet connection and try again. If the problem persists, you can contact us directly at korssoul.work@gmail.com');
             });
         });
