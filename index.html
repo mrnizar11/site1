@@ -120,7 +120,7 @@
                                 <input type="text" id="nationality" class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Russian" required>
                             </div>
                             
-                            <button type="submit" class="w-full bg-blue-900 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-800 transition duration-300 flex items-center justify-center" onclick="document.getElementById('registrationForm').scrollIntoView({behavior: 'smooth'})">
+                            <button type="submit" class="w-full bg-blue-900 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-800 transition duration-300 flex items-center justify-center">
                                 <i data-feather="user-plus" class="mr-2"></i>
                                 Register Student
                             </button>
@@ -223,6 +223,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
         AOS.init({
             duration: 800,
@@ -232,6 +233,11 @@
         
         feather.replace();
         
+        // Initialize EmailJS
+        (function() {
+            emailjs.init('YOUR_EMAILJS_USER_ID'); // You need to sign up at EmailJS.com and get your own ID
+        })();
+
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -245,24 +251,32 @@
                 nationality: document.getElementById('nationality').value
             };
 
-            // Construct email body
-            const emailBody = `New Student Registration:\n\n` +
-                             `Full Name: ${formData.fullName}\n` +
-                             `Date of Birth: ${formData.birthDate}\n` +
-                             `Specialty: ${formData.specialty}\n` +
-                             `Email: ${formData.email}\n` +
-                             `Phone: ${formData.phone}\n` +
-                             `Nationality: ${formData.nationality}`;
-
-            // Send email using mailto link
-            const mailtoLink = `mailto:mohamedmesselka31@gmail.com?subject=New Student Registration&body=${encodeURIComponent(emailBody)}`;
-            window.location.href = mailtoLink;
-
-            // Clear form
-            document.getElementById('registrationForm').reset();
-
-            // Show confirmation
-            alert('Thank you for registering with RusEntry! Our specialists will contact you shortly. A confirmation email has been sent to our team.');
+            // Send email using EmailJS
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+                to_email: 'mohamedmesselka31@gmail.com',
+                from_email: 'medasmo31@gmail.com',
+                from_name: 'RusEntry Registration',
+                subject: 'New Student Registration',
+                message: `New Student Registration Details:
+                
+Full Name: ${formData.fullName}
+Date of Birth: ${formData.birthDate}
+Specialty: ${formData.specialty}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Nationality: ${formData.nationality}`,
+                reply_to: formData.email
+            })
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                // Clear form
+                document.getElementById('registrationForm').reset();
+                // Show confirmation
+                alert('Thank you for registering with RusEntry! Our specialists will contact you shortly.');
+            }, function(error) {
+                console.log('FAILED...', error);
+                alert('There was an error submitting your form. Please try again later.');
+            });
         });
     </script>
 </body>
