@@ -258,9 +258,11 @@
             const mailtoLink = `mailto:mohamedmesselka31@gmail.com?subject=New Student Registration&body=${encodeURIComponent(emailBody)}`;
             window.location.href = mailtoLink;
 
+            // Clear form
+            document.getElementById('registrationForm').reset();
+
             // Show confirmation
-            alert('Thank you for registering with RusEntry! Our specialists will contact you shortly.');
-            console.log('Form data sent via email');
+            alert('Thank you for registering with RusEntry! Our specialists will contact you shortly. A confirmation email has been sent to our team.');
         });
     </script>
 </body>
