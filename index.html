@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.2.3.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
+		pre { font-size: 10pt; font-family: "Liberation Mono", monospace; background: transparent }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;RusEntry - Russian Student Registration&lt;/title&gt;
+    &lt;script src=&quot;https://cdn.tailwindcss.com&quot;&gt;&lt;/script&gt;
+    &lt;link href=&quot;https://unpkg.com/aos@2.3.1/dist/aos.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;script src=&quot;https://unpkg.com/aos@2.3.1/dist/aos.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://unpkg.com/feather-icons&quot;&gt;&lt;/script&gt;
+    &lt;style&gt;
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        }
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body class=&quot;bg-gray-50&quot;&gt;
+    &lt;!-- Navigation --&gt;
+    &lt;nav class=&quot;gradient-bg text-white shadow-lg&quot;&gt;
+        &lt;div class=&quot;container mx-auto px-6 py-4&quot;&gt;
+            &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+                &lt;div class=&quot;flex items-center space-x-4&quot;&gt;
+                    &lt;i data-feather=&quot;book&quot; class=&quot;w-8 h-8&quot;&gt;&lt;/i&gt;
+                    &lt;span class=&quot;text-xl font-bold&quot;&gt;RusEntry&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;hidden md:flex items-center space-x-8&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;hover:text-blue-200&quot;&gt;Home&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;hover:text-blue-200&quot;&gt;About&lt;/a&gt;
+                    &lt;a href=&quot;#contact-section&quot; class=&quot;hover:text-blue-200&quot;&gt;Contact&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;button class=&quot;md:hidden focus:outline-none&quot;&gt;
+                    &lt;i data-feather=&quot;menu&quot; class=&quot;w-6 h-6&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;!-- Hero Section --&gt;
+    &lt;section class=&quot;gradient-bg text-white py-20&quot;&gt;
+        &lt;div class=&quot;container mx-auto px-6 text-center&quot;&gt;
+            &lt;h1 class=&quot;text-4xl md:text-6xl font-bold mb-6&quot; data-aos=&quot;fade-down&quot;&gt;Student Portal&lt;/h1&gt;
+            &lt;p class=&quot;text-xl md:text-2xl mb-12 max-w-2xl mx-auto&quot; data-aos=&quot;fade-down&quot; data-aos-delay=&quot;200&quot;&gt;
+                Admissions of international students in Russian universities
+            &lt;/p&gt;
+            &lt;a href=&quot;#registrationForm&quot; class=&quot;bg-white text-blue-900 font-bold py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300 transform hover:scale-105&quot; data-aos=&quot;fade-up&quot; data-aos-delay=&quot;400&quot;&gt;
+                Register Now
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Registration Form --&gt;
+    &lt;section class=&quot;py-16 bg-white&quot;&gt;
+        &lt;div class=&quot;container mx-auto px-6&quot;&gt;
+            &lt;div class=&quot;max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden&quot; data-aos=&quot;zoom-in&quot;&gt;
+                &lt;div class=&quot;md:flex&quot;&gt;
+                    &lt;div class=&quot;md:w-1/2 bg-blue-900 text-white p-10 flex items-center&quot;&gt;
+                        &lt;div&gt;
+                            &lt;h2 class=&quot;text-3xl font-bold mb-4&quot;&gt;Student Information&lt;/h2&gt;
+                            &lt;p class=&quot;mb-6&quot;&gt;Fill out the form and we will contact you as soon as possible.&lt;/p&gt;
+                            &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                &lt;i data-feather=&quot;map-pin&quot; class=&quot;w-5 h-5&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;Available across Russia&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;md:w-1/2 p-10&quot;&gt;
+                        &lt;form id=&quot;registrationForm&quot;&gt;
+                            &lt;div class=&quot;mb-6&quot;&gt;
+                                &lt;label class=&quot;block text-gray-700 font-bold mb-2&quot; for=&quot;fullName&quot;&gt;Full Name&lt;/label&gt;
+                                &lt;input type=&quot;text&quot; id=&quot;fullName&quot; class=&quot;form-input w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500&quot; placeholder=&quot;Ivan Ivanov&quot; required&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;mb-6&quot;&gt;
+                                &lt;label class=&quot;block text-gray-700 font-bold mb-2&quot; for=&quot;birthDate&quot;&gt;Date of Birth&lt;/label&gt;
+                                &lt;input type=&quot;date&quot; id=&quot;birthDate&quot; class=&quot;form-input w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500&quot; required&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;mb-6&quot;&gt;
+                                &lt;label class=&quot;block text-gray-700 font-bold mb-2&quot; for=&quot;specialty&quot;&gt;Specialty&lt;/label&gt;
+                                &lt;select id=&quot;specialty&quot; class=&quot;form-input w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500&quot; required&gt;
+                                    &lt;option value=&quot;&quot;&gt;Select your specialty&lt;/option&gt;
+                                    &lt;option value=&quot;Pharmacy&quot;&gt;Pharmacy&lt;/option&gt;
+                                    &lt;option value=&quot;Medicine&quot;&gt;Medicine&lt;/option&gt;
+                                    &lt;option value=&quot;Dentistry&quot;&gt;Dentistry&lt;/option&gt;
+                                    &lt;option value=&quot;IT&quot;&gt;IT&lt;/option&gt;
+                                    &lt;option value=&quot;Mechanical Engineering&quot;&gt;Mechanical Engineering&lt;/option&gt;
+                                    &lt;option value=&quot;Electrical Engineering&quot;&gt;Electrical Engineering&lt;/option&gt;
+                                    &lt;option value=&quot;Biology&quot;&gt;Biology&lt;/option&gt;
+                                    &lt;option value=&quot;Chemistry&quot;&gt;Chemistry&lt;/option&gt;
+                                    &lt;option value=&quot;Mathematics&quot;&gt;Mathematics&lt;/option&gt;
+                                    &lt;option value=&quot;Russian Language&quot;&gt;Russian Language&lt;/option&gt;
+                                    &lt;option value=&quot;Geography&quot;&gt;Geography&lt;/option&gt;
+                                    &lt;option value=&quot;History&quot;&gt;History&lt;/option&gt;
+                                    &lt;option value=&quot;Accounting&quot;&gt;Accounting&lt;/option&gt;
+                                    &lt;option value=&quot;Business&quot;&gt;Business&lt;/option&gt;
+                                    &lt;option value=&quot;Economy&quot;&gt;Economy&lt;/option&gt;
+                                    &lt;option value=&quot;Other&quot;&gt;Other&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;mb-6&quot;&gt;
+                                &lt;label class=&quot;block text-gray-700 font-bold mb-2&quot; for=&quot;email&quot;&gt;Email&lt;/label&gt;
+                                &lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;form-input w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500&quot; placeholder=&quot;student@university.edu&quot; required&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;mb-6&quot;&gt;
+                                &lt;label class=&quot;block text-gray-700 font-bold mb-2&quot; for=&quot;phone&quot;&gt;Phone Number&lt;/label&gt;
+                                &lt;input type=&quot;tel&quot; id=&quot;phone&quot; class=&quot;form-input w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500&quot; placeholder=&quot;+7 (XXX) XXX-XX-XX&quot; required&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;mb-6&quot;&gt;
+                                &lt;label class=&quot;block text-gray-700 font-bold mb-2&quot; for=&quot;nationality&quot;&gt;Nationality&lt;/label&gt;
+                                &lt;input type=&quot;text&quot; id=&quot;nationality&quot; class=&quot;form-input w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500&quot; placeholder=&quot;Russian&quot; required&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;button type=&quot;submit&quot; class=&quot;w-full bg-blue-900 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-800 transition duration-300 flex items-center justify-center&quot; onclick=&quot;document.getElementById('registrationForm').scrollIntoView({behavior: 'smooth'})&quot;&gt;
+                                &lt;i data-feather=&quot;user-plus&quot; class=&quot;mr-2&quot;&gt;&lt;/i&gt;
+                                Register Student
+                            &lt;/button&gt;
+                        &lt;/form&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Banner --&gt;
+    &lt;div class=&quot;bg-yellow-500 text-black py-4 px-6 text-center&quot;&gt;
+        &lt;div class=&quot;container mx-auto&quot;&gt;
+            &lt;p class=&quot;font-bold text-lg&quot;&gt;LOWEST PRICES ON THE MARKET!&lt;/p&gt;
+            &lt;p class=&quot;text-sm&quot;&gt;Russian professionals working for you. We receive students from all over the world.&lt;/p&gt;
+            &lt;p class=&quot;text-xs mt-2&quot;&gt;Our specialists speak: French, Arabic, English, Maghreb dialect, Spanish, and Russian&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Features --&gt;
+    &lt;section class=&quot;py-16 bg-gray-100&quot;&gt;
+        &lt;div class=&quot;container mx-auto px-6&quot;&gt;
+            &lt;h2 class=&quot;text-3xl font-bold text-center mb-16&quot; data-aos=&quot;fade-up&quot;&gt;Why Register With Us?&lt;/h2&gt;
+            
+            &lt;div class=&quot;grid md:grid-cols-3 gap-10&quot;&gt;
+                &lt;div class=&quot;bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300&quot; data-aos=&quot;fade-up&quot; data-aos-delay=&quot;100&quot;&gt;
+                    &lt;div class=&quot;text-blue-900 mb-4&quot;&gt;
+                        &lt;i data-feather=&quot;shield&quot; class=&quot;w-10 h-10&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;h3 class=&quot;text-xl font-bold mb-3&quot;&gt;Secure Data&lt;/h3&gt;
+                    &lt;p class=&quot;text-gray-600&quot;&gt;All student information is protected with advanced encryption and security measures.&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300&quot; data-aos=&quot;fade-up&quot; data-aos-delay=&quot;200&quot;&gt;
+                    &lt;div class=&quot;text-blue-900 mb-4&quot;&gt;
+                        &lt;i data-feather=&quot;globe&quot; class=&quot;w-10 h-10&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;h3 class=&quot;text-xl font-bold mb-3&quot;&gt;Russia-Wide Coverage&lt;/h3&gt;
+                    &lt;p class=&quot;text-gray-600&quot;&gt;We work with educational institutions across all regions of the Russian Federation.&lt;/p&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300&quot; data-aos=&quot;fade-up&quot; data-aos-delay=&quot;300&quot;&gt;
+                    &lt;div class=&quot;text-blue-900 mb-4&quot;&gt;
+                        &lt;i data-feather=&quot;award&quot; class=&quot;w-10 h-10&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;h3 class=&quot;text-xl font-bold mb-3&quot;&gt;Verified Institutions&lt;/h3&gt;
+                    &lt;p class=&quot;text-gray-600&quot;&gt;Only officially recognized Russian universities and colleges are included in our system.&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Footer --&gt;
+    &lt;footer class=&quot;gradient-bg text-white py-12&quot;&gt;
+        &lt;div class=&quot;container mx-auto px-6&quot;&gt;
+            &lt;div class=&quot;grid md:grid-cols-4 gap-8&quot;&gt;
+                &lt;div id=&quot;contact-section&quot;&gt;
+                    &lt;h3 class=&quot;text-xl font-bold mb-4&quot;&gt;Russian Student Registry&lt;/h3&gt;
+                    &lt;p class=&quot;mb-4&quot;&gt;Connecting international students with Russian educational opportunities.&lt;/p&gt;
+                    &lt;div class=&quot;flex space-x-4&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;hover:text-blue-200&quot;&gt;&lt;i data-feather=&quot;facebook&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href=&quot;https://instagram.com/rusentry&quot; class=&quot;hover:text-blue-200&quot;&gt;&lt;i data-feather=&quot;instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div&gt;
+                    &lt;h4 class=&quot;font-bold mb-4&quot;&gt;Quick Links&lt;/h4&gt;
+                    &lt;ul class=&quot;space-y-2&quot;&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;hover:text-blue-200&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#registrationForm&quot; class=&quot;hover:text-blue-200&quot;&gt;Registration&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;universities.html&quot; class=&quot;hover:text-blue-200&quot;&gt;Universities&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;hover:text-blue-200&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                
+                &lt;div&gt;
+                    &lt;h4 class=&quot;font-bold mb-4&quot;&gt;Legal&lt;/h4&gt;
+                    &lt;ul class=&quot;space-y-2&quot;&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;hover:text-blue-200&quot;&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;hover:text-blue-200&quot;&gt;Terms of Service&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;hover:text-blue-200&quot;&gt;Data Protection&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                
+                &lt;div&gt;
+                    &lt;h4 class=&quot;font-bold mb-4&quot;&gt;Contact&lt;/h4&gt;
+                    &lt;ul class=&quot;space-y-2&quot;&gt;
+                        &lt;li class=&quot;flex items-center&quot;&gt;&lt;i data-feather=&quot;mail&quot; class=&quot;mr-2 w-4 h-4&quot;&gt;&lt;/i&gt; korssoul.work@gmail.com&lt;/li&gt;
+                        &lt;li class=&quot;flex items-center&quot;&gt;&lt;i data-feather=&quot;phone&quot; class=&quot;mr-2 w-4 h-4&quot;&gt;&lt;/i&gt; +7 (995) 138-04-93&lt;/li&gt;
+                        &lt;li class=&quot;flex items-center&quot;&gt;&lt;i data-feather=&quot;phone&quot; class=&quot;mr-2 w-4 h-4&quot;&gt;&lt;/i&gt; +7 (961) 199-34-15&lt;/li&gt;
+                        &lt;li class=&quot;flex items-center&quot;&gt;&lt;i data-feather=&quot;map-pin&quot; class=&quot;mr-2 w-4 h-4&quot;&gt;&lt;/i&gt; Moscow, Russia&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;border-t border-blue-800 mt-12 pt-8 text-center&quot;&gt;
+                &lt;p&gt;&amp;copy; 2023 RusEntry. All rights reserved.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+    &lt;!-- Scripts --&gt;
+    &lt;script&gt;
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        feather.replace();
+        
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                birthDate: document.getElementById('birthDate').value,
+                specialty: document.getElementById('specialty').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                nationality: document.getElementById('nationality').value
+            };
+
+            // Construct email body
+            const emailBody = `New Student Registration:\n\n` +
+                             `Full Name: ${formData.fullName}\n` +
+                             `Date of Birth: ${formData.birthDate}\n` +
+                             `Specialty: ${formData.specialty}\n` +
+                             `Email: ${formData.email}\n` +
+                             `Phone: ${formData.phone}\n` +
+                             `Nationality: ${formData.nationality}`;
+
+            // Send email using mailto link
+            const mailtoLink = `mailto:mohamedmesselka31@gmail.com?subject=New Student Registration&amp;body=${encodeURIComponent(emailBody)}`;
+            window.location.href = mailtoLink;
+
+            // Show confirmation
+            alert('Thank you for registering with RusEntry! Our specialists will contact you shortly.');
+            console.log('Form data sent via email');
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</body>
+</html>
